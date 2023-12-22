@@ -6,3 +6,10 @@
 /DotNet8Api/.vs/DotNet8Api
 /.vs
 /DotNet8Api/DotNet8Api/obj
+/DotNet8Api/DotNet8Api.Db/bin/Debug/net8.0
+/DotNet8Api/DotNet8Api.Db/obj
+/DotNet8Api/DotNet8Api.Model/bin/Debug/net8.0
+/DotNet8Api/DotNet8Api.Model/obj
+/DotNet8Api/DotNet8Api.Orchestrator/bin/Debug/net8.0
+/DotNet8Api/DotNet8Api.Orchestrator/obj
+/DotNet8Api/.vs/ProjectEvaluation
