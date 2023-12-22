@@ -17,7 +17,7 @@ namespace DotNet8Api.Db.QueryRepository
 
         public async IAsyncEnumerable<EmployeeDepartment> ExecuteQuery(GetEmployeeDepartmentRequest request)
         {
-            var result = from emp in _queryContext.Employees
+            var result = from emp in _queryContext.Employees.Where(x => request.EmployeeId == null || x.EmployeeId == request.EmployeeId)
                          join person in _queryContext.Persons on emp.EmployeeId equals person.PersonId
                          join empDept in _queryContext.EmployeeDepartmentHistories on emp.EmployeeId equals empDept.EmployeeId
                          join dept in _queryContext.Departments on empDept.DepartmentId equals dept.DepartmentId
