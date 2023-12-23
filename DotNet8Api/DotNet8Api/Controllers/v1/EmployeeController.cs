@@ -24,5 +24,12 @@ namespace DotNet8Api.Controllers.v1
                 yield return item;
             }            
         }
+
+        [HttpPost(Name = "UpdateEmployee")]
+        public async Task<bool> UpdateEmployee(UpdateEmployeeLogin request)
+        {
+            var result = await _mediator.Send(request);
+            return result;
+        }
     }
 }

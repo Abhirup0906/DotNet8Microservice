@@ -22,7 +22,7 @@ namespace DotNet8Api.Db
 
         private static void RepositoryInjection(IServiceCollection serviceCollection)
         {
-            var assembly = typeof(ICommand<,>).Assembly;
+            var assembly = typeof(ICommand<>).Assembly;
 
             foreach (var type in assembly.GetTypes().Where(x => x.IsClass && !x.IsAbstract))
             {
@@ -35,7 +35,7 @@ namespace DotNet8Api.Db
             var typeinfo = (TypeInfo)type;
             var implInterfaces = typeinfo.ImplementedInterfaces;
             var repointf = typeinfo.ImplementedInterfaces
-                .FirstOrDefault(x => x.FullName != null && (x.FullName.Contains(typeof(ICommand<,>).Name) || x.FullName.Contains(typeof(IQuery<,>).Name)));
+                .FirstOrDefault(x => x.FullName != null && (x.FullName.Contains(typeof(ICommand<>).Name) || x.FullName.Contains(typeof(IQuery<,>).Name)));
             if (repointf != null)
             {
                 foreach (var intf in implInterfaces)

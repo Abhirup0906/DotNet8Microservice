@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace DotNet8Api.Db
 {
-    public interface ICommand<T, Boolean>
+    public interface ICommand<T>
     {
         void CreateTransaction();
-        void CommitTransaction();
-        void RollbackTransaction();
+        Task CommitTransaction();
+        Task RollbackTransaction();
         Task<bool> Execute(T request);
     }
 }
